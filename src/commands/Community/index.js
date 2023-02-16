@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits,PermissionsBitField, Permissions, MessageManager, Collection, IntentsBitField } = require(`discord.js`);
+const { Client, GatewayIntentBits,PermissionsBitField, Permissions, MessageManager, Collection, IntentsBitField, ChannelType } = require(`discord.js`);
 const client = new Client({ 
     intents: [
     GatewayIntentBits.Guilds,
@@ -20,13 +20,6 @@ module.exports = {
     .setName('help')
     .setDescription('If you need help , so read this'),
     async execute(interaction, client) {
-        const button = new ActionRowBuilder()
-        .addComponents(
-            new ButtonBuilder()
-            .setCustomId('help')
-            .setLabel('Help')
-        )
-
         const embed = new EmbedBuilder()
         .setTitle('Help Centre')
         .addFields({name: 'This might help you to realise what is this',value: `${client.channels.cache.get(help_resourcesID)}`})
@@ -40,14 +33,11 @@ module.exports = {
             {name: `Username:`,value: `markek`,inline:true}
             )
         .setThumbnail('https://www.actitime.com/wp-content/uploads/2022/02/10x-Developer-2.png')
-
-        if(interaction.channels.id!==chatID){
-            interaction.reply("aboba")
-        }
-        // interaction.reply({embeds: [embed,embed2]})
+        await interaction.reply({embeds: [embed,embed2]})
     }
     
 }
+
 
 
 
