@@ -1,12 +1,13 @@
 {
   "dependencies": {
     "discord.js": "^14.7.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.9.1",
+    "mongose": "^0.0.2-security"
   },
   "name": "discordbotv2",
   "version": "1.0.0",
   "main": "src/index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "node src/index.js"
   },
